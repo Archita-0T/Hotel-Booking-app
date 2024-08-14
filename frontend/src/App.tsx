@@ -5,6 +5,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import Layout from "./layouts/Layout";
+import Register from "./pages/Register";
+import SignIn from "./pages/SignIn";
 
 const App=()=>{
   return(
@@ -12,7 +14,24 @@ const App=()=>{
       <Routes>
         <Route path="/" element={<Layout><p>Home Page</p></Layout>}/>
         <Route path="/search" element={<Layout><p>Search Page</p></Layout>}/>
-        <Route path="*" element={<Navigate to="/"/>} />
+        <Route
+          path="/register"
+          element={
+            <Layout>
+              <Register />
+            </Layout>
+          }
+        />
+            <Route
+          path="/sign-in"
+          element={
+            <Layout>
+              <SignIn />
+            </Layout>
+          }
+        />
+       {/* catch all routes  */}
+        <Route path="*" element={<Navigate to="/"/>} />   
       </Routes>
     </Router>
   )
