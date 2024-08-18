@@ -1,3 +1,4 @@
+//created shared folder for types because the following types are shared between both frontend and backend
 export type UserType = {
     _id: string;
     email: string;

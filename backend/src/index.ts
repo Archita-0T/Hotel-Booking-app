@@ -31,15 +31,16 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/my-hotels", myHotelRoutes);
 
+//catch all route
 app.get("*", (req: Request, res: Response)=>{
     res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"))
 
 })
 
-app.get("/api/test", async (req, res)=>{
-    res.json({message: "hello from express endpoint !"})
+// app.get("/api/test", async (req, res)=>{
+//     res.json({message: "hello from express endpoint !"})
 
-})
+// })
 
 app.listen(7000, ()=>{
     console.log("server running on port 7000")

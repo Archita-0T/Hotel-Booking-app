@@ -10,7 +10,7 @@ import { useEffect } from "react";
 export type HotelFormData = {
   name: string;
   city: string;
-  country: string;
+  state: string;
   description: string;
   type: string;
   pricePerNight: number;
@@ -43,7 +43,7 @@ const ManageHotelForm = ({ onSave, isLoading, hotel }: Props) => {
     }
     formData.append("name", formDataJson.name);
     formData.append("city", formDataJson.city);
-    formData.append("state", formDataJson.country);
+    formData.append("state", formDataJson.state);
     formData.append("description", formDataJson.description);
     formData.append("type", formDataJson.type);
     formData.append("pricePerNight", formDataJson.pricePerNight.toString());
