@@ -6,7 +6,7 @@ import '../index.css';
 const Header = () => {
   const { isLoggedIn } = useAppContext();
   return (
-    <div className="bg-[#5F3900] py-2 ">
+    <div className="bg-[#5F3900] py-2  ">
         <div className="container mx-auto flex justify-between">
             <span>
                 <Link to="/"><img className="h-20 w-44" src={logo}/></Link>
