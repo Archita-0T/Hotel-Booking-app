@@ -30,3 +30,15 @@ test("should show hotel search results", async ({ page }) => {
   // Assert that the element is visible
   await expect(hotelElement).toBeVisible({ timeout: 10000 });
 });
+
+test("should show hotel detail", async ({ page }) => {
+  await page.goto(UI_URL);
+
+  await page.getByPlaceholder("Where are you going?").fill("Test City");
+  await page.getByRole("button", { name: "Search" }).click();
+  await page.locator('text="Test Hotel"').first().click();
+
+  
+  await expect(page).toHaveURL(/detail/);
+  await expect(page.getByRole("button", { name: "Book now" })).toBeVisible();
+});
